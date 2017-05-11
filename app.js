@@ -1,6 +1,6 @@
 'use strict';
 
-/* var correctAnswers = 0;
+var correctAnswers = 0;
 
 var userName = prompt('What\'s your name?');
 alert('Hello ' + userName + ', I\'m going to ask you a few questions. The first five are yes/no questions.');
@@ -87,43 +87,66 @@ do{
     workArray.push(work);
   }
 } while (work !== 'YES' && work !== 'Y' && work !== 'NO' && work !== 'N');
-console.log('Not Y/N: ', work);
-console.log('David working now: ', workArray);
+console.log('David working now: ', work);
+console.log('Not Y/N: ', workArray);
 
-console.log('Correct Answers: ', correctAnswers);
-alert('In the end, you got ' + correctAnswers + ' out of 5 correct. But how were you supposed to know any of this anyways?');
-*/
 var guessesArray = [];
-var numberOfPetsGuess = prompt('How many household pets has David had in his lifetime?');
-guessesArray.push(numberOfPetsGuess);
 var numberOfPetsActual = 6;
 var counter = 1;
+var petflag = false;
 
 do{
-  if (numberOfPetsGuess<numberOfPetsActual){
-    numberOfPetsGuess = prompt('Too low, guess higher.');
+  var numberOfPetsGuess = prompt('How many household pets has David had in his lifetime?');
+  guessesArray.push(numberOfPetsGuess);
+  if (counter === 4){
+    alert('Sorry, you only get four guesses on this one.');
+    petflag = false;
+  } else if (numberOfPetsGuess<numberOfPetsActual){
+    alert('Too low, guess higher.');
     counter++;
     guessesArray.push(numberOfPetsGuess);
   } else if (numberOfPetsGuess>numberOfPetsActual){
-    numberOfPetsGuess = prompt('Too high, guess lower.');
+    alert('Too high, guess lower.');
     counter++;
     guessesArray.push(numberOfPetsGuess);
   } else if (isNaN(numberOfPetsGuess)){
-    numberOfPetsGuess = prompt('Enter a number please.');
+    alert('Enter a number please.');
     counter++;
     guessesArray.push(numberOfPetsGuess);
+  } else {
+    alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.');
+    correctAnswers++;
+    break;
   }
-} while (numberOfPetsGuess !== numberOfPetsActual && counter < 4);
+} while (numberOfPetsGuess !== numberOfPetsActual || petflag);
 
-if(numberOfPetsGuess === numberOfPetsActual){
-  alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.');
-}
-if(counter === 1){
-  alert('You got it on your first guess!')
-} else if(counter === 4 && numberOfPetsGuess !== numberOfPetsActual){
-  alert('Sorry, you only get four guesses.');
-} else {
-  alert('It only took you ' + counter + ' guesses!');
-}
 console.log('Number of Guesses: ', counter);
 console.log('Guesses: ', guessesArray);
+
+var citiesBaseball = ['New York', 'Chicago', 'Detroit', 'St. Louis', 'San Fransisco', 'Milwaukee', 'Baltimore', 'Boston'];
+var baseballArray = [];
+var flag;
+var counterTwo = 0;
+
+while(!flag){
+  var cityGuess = prompt('Besides Seattle, name a city in which David has gone to a MLB game.').toUpperCase();
+  counterTwo++
+  for(var j=0;j<citiesBaseball.length;j++){
+    console.log('Current guess: ', cityGuess);
+    if (cityGuess === citiesBaseball[j].toUpperCase()){
+      alert('You\'re right!');
+      correctAnswers++;
+      flag = true;
+      break;
+    } else if (counterTwo === 6){
+      alert('Sorry, you only get 6 guesses.');
+      flag = true;
+      break;
+    }
+  }
+}
+
+var citiesBaseballString = citiesBaseball.toString();
+alert('You could have chosen from any of these cities: ' + citiesBaseballString);
+console.log('Correct Answers: ', correctAnswers);
+alert('In the end, you got ' + correctAnswers + ' out of 7 correct. But how were you supposed to know any of this anyways?');
