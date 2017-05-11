@@ -16,6 +16,7 @@ header {
   padding-top: .5em;
   margin: auto;
   border: 2px solid black;
+
 }
 .leftbar{
   height: 1500px;
@@ -32,6 +33,11 @@ header {
   text-align: center;
   margin: 0;
 }
+.Intro{
+  font-size: 1.15em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 main{
   float: left;
   background-color: green;
@@ -41,4 +47,7 @@ main{
 img{
   height: 15em;
   width: 20em;
+}
+button {
+  margin-left: 40px;
 }
