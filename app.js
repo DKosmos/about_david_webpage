@@ -1,7 +1,7 @@
 'use strict';
 
 var correctAnswers = 0;
-
+/*
 var userName = prompt('What\'s your name?');
 alert('Hello ' + userName + ', I\'m going to ask you a few questions. The first five are yes/no questions.');
 
@@ -89,7 +89,7 @@ do{
 } while (work !== 'YES' && work !== 'Y' && work !== 'NO' && work !== 'N');
 console.log('David working now: ', work);
 console.log('Not Y/N: ', workArray);
-
+*/
 var guessesArray = [];
 var numberOfPetsActual = 6;
 var counter = 1;
@@ -97,28 +97,24 @@ var petflag = false;
 
 do{
   var numberOfPetsGuess = prompt('How many household pets has David had in his lifetime?');
-  guessesArray.push(numberOfPetsGuess);
-  if (counter === 4){
-    alert('Sorry, you only get four guesses on this one.');
-    petflag = false;
-  } else if (numberOfPetsGuess<numberOfPetsActual){
+  counter++;
+  if (numberOfPetsGuess<numberOfPetsActual){
     alert('Too low, guess higher.');
-    counter++;
-    guessesArray.push(numberOfPetsGuess);
   } else if (numberOfPetsGuess>numberOfPetsActual){
     alert('Too high, guess lower.');
-    counter++;
-    guessesArray.push(numberOfPetsGuess);
-  } else if (isNaN(numberOfPetsGuess)){
+  } else if (isNaN(numberOfPetsGuess) || numberOfPetsGuess === null){
     alert('Enter a number please.');
-    counter++;
-    guessesArray.push(numberOfPetsGuess);
-  } else {
-    alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.');
-    correctAnswers++;
-    break;
   }
-} while (numberOfPetsGuess !== numberOfPetsActual || petflag);
+  guessesArray.push(numberOfPetsGuess);
+  console.log(counter);
+} while (parseInt(numberOfPetsGuess) !== numberOfPetsActual && counter < 5)
+
+if (parseInt(numberOfPetsGuess) === numberOfPetsActual){
+  alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.');
+  correctAnswers++;
+} else {
+  alert('Sorry you only get four guesses.');
+}
 
 console.log('Number of Guesses: ', counter);
 console.log('Guesses: ', guessesArray);
