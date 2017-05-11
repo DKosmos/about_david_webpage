@@ -46,28 +46,32 @@ function questionTwo() {
   console.log('Not Y/N: ', petTypeArray);
 }
 
-questionOne()
-questionTwo()
+function questionThree() {
+
+  var homeArray = [];
+  do{
+    var home = prompt('Does David walk to class each day?').toUpperCase();
+
+    if (home === 'YES' || home === 'Y'){
+      alert('Right you are, but he only lives two blocks away so it\'s not that impressive.');
+      ++correctAnswers;
+    } else if(home === 'NO' || home === 'N'){
+      alert('Actually he does walk to class, but he only lives two blocks away.');
+    } else {
+      alert('By now you should know these are yes/no questions. Let\'s try this again.');
+      homeArray.push(home);
+    }
+  } while(home !== 'YES' && home !== 'Y' && home !== 'NO' && home !== 'N');
+  console.log('Walks to class: ', home);
+  console.log('Not Y/N: ', homeArray);
+}
+
+questionOne();
+questionTwo();
+questionThree();
 
 
 
-
-var homeArray = [];
-do{
-  var home = prompt('Does David walk to class each day?').toUpperCase();
-
-  if (home === 'YES' || home === 'Y'){
-    alert('Right you are, but he only lives two blocks away so it\'s not that impressive.');
-    ++correctAnswers;
-  } else if(home === 'NO' || home === 'N'){
-    alert('Actually he does walk to class, but he only lives two blocks away.');
-  } else {
-    alert('By now you should know these are yes/no questions. Let\'s try this again.');
-    homeArray.push(home);
-  }
-} while(home !== 'YES' && home !== 'Y' && home !== 'NO' && home !== 'N');
-console.log('Walks to class: ', home);
-console.log('Not Y/N: ', homeArray);
 
 var lunchArray = [];
 do{
