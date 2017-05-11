@@ -5,22 +5,28 @@ var correctAnswers = 0;
 var userName = prompt('What\'s your name?');
 alert('Hello ' + userName + ', I\'m going to ask you a few questions. The first five are yes/no questions.');
 
-var petsArray = [];
-do{
-  var pets = prompt('Does David have any pets?').toUpperCase();
 
-  if (pets === 'YES' || pets === 'Y'){
-    alert('You\'re right! He does have a pet.');
-    ++correctAnswers;
-  } else if (pets === 'NO' || pets === 'N'){
-    alert('Actually, he does have a pet.');
-  } else {
-    alert('That\'s not a yes or no answer! Try again.');
-    petsArray.push(pets);
-  }
-} while (pets !== 'YES' && pets !== 'Y' && pets !== 'NO' && pets !== 'N');
-console.log('Pets Guess: ', pets);
-console.log('Not Y/N: ', petsArray);
+function questionOne() {
+
+  var petsArray = [];
+  do{
+    var pets = prompt('Does David have any pets?').toUpperCase();
+
+    if (pets === 'YES' || pets === 'Y'){
+      alert('You\'re right! He does have a pet.');
+      ++correctAnswers;
+    } else if (pets === 'NO' || pets === 'N'){
+      alert('Actually, he does have a pet.');
+    } else {
+      alert('That\'s not a yes or no answer! Try again.');
+      petsArray.push(pets);
+    }
+  } while (pets !== 'YES' && pets !== 'Y' && pets !== 'NO' && pets !== 'N');
+  console.log('Pets Guess: ', pets);
+  console.log('Not Y/N: ', petsArray);
+}
+
+questionOne()
 
 var petTypeArray = [];
 do{
