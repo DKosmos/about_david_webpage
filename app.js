@@ -127,6 +127,7 @@ var counterTwo = 0;
 while(!flag){
   var cityGuess = prompt('Besides Seattle, name a city in which David has gone to a MLB game.').toUpperCase();
   counterTwo++
+  baseballArray.push(cityGuess);
   for(var j=0;j<citiesBaseball.length;j++){
     console.log('Current guess: ', cityGuess);
     if (cityGuess === citiesBaseball[j].toUpperCase()){
