@@ -1,7 +1,7 @@
 'use strict';
 
 var correctAnswers = 0;
-/*
+
 var userName = prompt('What\'s your name?');
 alert('Hello ' + userName + ', I\'m going to ask you a few questions. The first five are yes/no questions.');
 
@@ -89,7 +89,7 @@ do{
 } while (work !== 'YES' && work !== 'Y' && work !== 'NO' && work !== 'N');
 console.log('David working now: ', work);
 console.log('Not Y/N: ', workArray);
-*/
+
 var guessesArray = [];
 var numberOfPetsActual = 6;
 var counter = 1;
