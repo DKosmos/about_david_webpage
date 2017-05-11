@@ -104,7 +104,7 @@ function questionFive() {
   } while (work !== 'YES' && work !== 'Y' && work !== 'NO' && work !== 'N');
   console.log('David working now: ', work);
   console.log('Not Y/N: ', workArray);
-
+}
 
 questionOne();
 questionTwo();
