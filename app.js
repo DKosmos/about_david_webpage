@@ -26,24 +26,31 @@ function questionOne() {
   console.log('Not Y/N: ', petsArray);
 }
 
+function questionTwo() {
+
+  var petTypeArray = [];
+  do{
+    var petType = prompt('Does David have a cat?').toUpperCase();
+
+    if(petType === 'YES' || petType === 'Y'){
+      alert('Wrong, David has a dog.');
+    } else if (petType === 'NO' || petType === 'N'){
+      alert('You\'re right! David has a dog, not a cat.');
+      ++correctAnswers;
+    } else {
+      alert('Just answer yes or no, you\'re better than this.');
+      petTypeArray.push(petType);
+    }
+  } while(petType !== 'YES' && petType !== 'Y' && petType !== 'NO' && petType !== 'N');
+  console.log('David has cat: ', petType);
+  console.log('Not Y/N: ', petTypeArray);
+}
+
 questionOne()
+questionTwo()
 
-var petTypeArray = [];
-do{
-  var petType = prompt('Does David have a cat?').toUpperCase();
 
-  if(petType === 'YES' || petType === 'Y'){
-    alert('Wrong, David has a dog.');
-  } else if (petType === 'NO' || petType === 'N'){
-    alert('You\'re right! David has a dog, not a cat.');
-    ++correctAnswers;
-  } else {
-    alert('Just answer yes or no, you\'re better than this.');
-    petTypeArray.push(petType);
-  }
-} while(petType !== 'YES' && petType !== 'Y' && petType !== 'NO' && petType !== 'N');
-console.log('David has cat: ', petType);
-console.log('Not Y/N: ', petTypeArray);
+
 
 var homeArray = [];
 do{
