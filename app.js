@@ -66,29 +66,33 @@ function questionThree() {
   console.log('Not Y/N: ', homeArray);
 }
 
+function questionFour() {
+
+  var lunchArray = [];
+  do{
+    var lunch = prompt('Does David walk his dog during his lunch hour?').toUpperCase();
+
+    if (lunch === 'YES' || lunch === 'Y'){
+      alert('Well he usually does. Sometime his dog goes to daycare.');
+      ++correctAnswers;
+    } else if (lunch === 'NO' || lunch === 'N'){
+      alert('He actually walks his dog most days during the lunch hour. Occasionally his dog goes to daycare for the whole day.');
+    } else {
+      alert('Just yes or no please.')
+      lunchArray.push(lunch);
+    }
+  } while (lunch !== 'YES' && lunch !== 'Y' && lunch !== 'NO' && lunch !== 'N');
+  console.log('Walks dog at lunch: ', lunch);
+  console.log('Not Y/N: ', lunchArray);
+}
+
 questionOne();
 questionTwo();
 questionThree();
+questionFour();
 
 
 
-
-var lunchArray = [];
-do{
-  var lunch = prompt('Does David walk his dog during his lunch hour?').toUpperCase();
-
-  if (lunch === 'YES' || lunch === 'Y'){
-    alert('Well he usually does. Sometime his dog goes to daycare.');
-    ++correctAnswers;
-  } else if (lunch === 'NO' || lunch === 'N'){
-    alert('He actually walks his dog most days during the lunch hour. Occasionally his dog goes to daycare for the whole day.');
-  } else {
-    alert('Just yes or no please.')
-    lunchArray.push(lunch);
-  }
-} while (lunch !== 'YES' && lunch !== 'Y' && lunch !== 'NO' && lunch !== 'N');
-console.log('Walks dog at lunch: ', lunch);
-console.log('Not Y/N: ', lunchArray);
 
 var workArray = [];
 do{
