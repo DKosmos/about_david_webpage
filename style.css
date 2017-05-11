@@ -1,0 +1,44 @@
+body{
+  height: auto;
+}
+.ListTitle{
+  text-decoration: underline;
+}
+li{
+  list-style-type: none;
+}
+header {
+  width: auto;
+  height: 2em;
+  font-size: 6em;
+  text-align: center;
+  background-color: green;
+  padding-top: .5em;
+  margin: auto;
+  border: 2px solid black;
+}
+.leftbar{
+  height: 1500px;
+  background-color: blue;
+  width: 20%;
+  margin-right: 0px;
+  float: left;
+}
+.rightbar{
+  float: right;
+  height: 1500px;
+  background-color: black;
+  width: 20%;
+  text-align: center;
+  margin: 0;
+}
+main{
+  float: left;
+  background-color: green;
+  width: 60%;
+  height: 1500px;
+}
+img{
+  height: 15em;
+  width: 20em;
+}
