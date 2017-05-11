@@ -106,30 +106,47 @@ function questionFive() {
   console.log('Not Y/N: ', workArray);
 }
 
+function questionSix() {
+
+  var guessesArray = [];
+  var numberOfPetsActual = 6;
+  var counter = 1;
+  var petflag = false;
+
+  do{
+    var numberOfPetsGuess = prompt('How many household pets has David had in his lifetime?');
+    counter++;
+    if (numberOfPetsGuess<numberOfPetsActual){
+      alert('Too low, guess higher.');
+    } else if (numberOfPetsGuess>numberOfPetsActual){
+      alert('Too high, guess lower.');
+    } else if (isNaN(numberOfPetsGuess) || numberOfPetsGuess === null){
+      alert('Enter a number please.');
+    }
+    guessesArray.push(numberOfPetsGuess);
+    console.log(counter);
+  } while (parseInt(numberOfPetsGuess) !== numberOfPetsActual && counter < 5)
+
+  if (parseInt(numberOfPetsGuess) === numberOfPetsActual){
+    alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.');
+    correctAnswers++;
+  } else {
+    alert('Sorry you only get four guesses.');
+  }
+
+  console.log('Number of Guesses: ', counter);
+  console.log('Guesses: ', guessesArray);
+}
+
 questionOne();
 questionTwo();
 questionThree();
 questionFour();
 questionFive();
+questionSix();
 
-
-
-// var workArray = [];
-// do{
-//   var work = prompt('Is David still working while he takes Code 201?').toUpperCase();
 //
-//   if (work === 'YES' || work === 'Y'){
-//     alert('There\'s no way David could work while taking classes from 9am to 6pm.');
-//   } else if (work === 'NO' || work === 'N'){
-//     alert('You\'re right, he took the month off from work to learn code!');
-//     ++correctAnswers;
-//   } else {
-//     alert('This is the fifth question, you should have it figured out by now.');
-//     workArray.push(work);
-//   }
-// } while (work !== 'YES' && work !== 'Y' && work !== 'NO' && work !== 'N');
-// console.log('David working now: ', work);
-// console.log('Not Y/N: ', workArray);
+//
 //
 // var guessesArray = [];
 // var numberOfPetsActual = 6;
