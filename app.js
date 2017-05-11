@@ -149,4 +149,4 @@ while(!flag){
 var citiesBaseballString = citiesBaseball.toString();
 alert('You could have chosen from any of these cities: ' + citiesBaseballString);
 console.log('Correct Answers: ', correctAnswers);
-alert('In the end, you got ' + correctAnswers + ' out of 7 correct. But how were you supposed to know any of this anyways?');
+alert('In the end, you got ' + correctAnswers + ' out of 7 correct, ' + userName + '. But how were you supposed to know any of this anyways?');
