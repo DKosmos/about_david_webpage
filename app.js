@@ -138,70 +138,44 @@ function questionSix() {
   console.log('Guesses: ', guessesArray);
 }
 
+function questionSeven() {
+
+  var citiesBaseball = ['New York', 'Chicago', 'Detroit', 'St. Louis', 'San Fransisco', 'Milwaukee', 'Baltimore', 'Boston'];
+  var baseballArray = [];
+  var flag;
+  var counterTwo = 0;
+
+  while(!flag){
+    var cityGuess = prompt('Besides Seattle, name a city in which David has gone to a MLB game.').toUpperCase();
+    counterTwo++
+    baseballArray.push(cityGuess);
+    for(var j=0;j<citiesBaseball.length;j++){
+      console.log('Current guess: ', cityGuess);
+      if (cityGuess === citiesBaseball[j].toUpperCase()){
+        alert('You\'re right!');
+        correctAnswers++;
+        flag = true;
+        break;
+      } else if (counterTwo === 6){
+        alert('Sorry, you only get 6 guesses.');
+        flag = true;
+        break;
+      }
+    }
+  }
+
+  var citiesBaseballString = citiesBaseball.toString();
+  alert('You could have chosen from any of these cities: ' + citiesBaseballString);
+  console.log('Correct Answers: ', correctAnswers);
+  alert('In the end, you got ' + correctAnswers + ' out of 7 correct, ' + userName + '. But how were you supposed to know any of this anyways?');
+
+}
+
+
 questionOne();
 questionTwo();
 questionThree();
 questionFour();
 questionFive();
 questionSix();
-
-//
-//
-//
-// var guessesArray = [];
-// var numberOfPetsActual = 6;
-// var counter = 1;
-// var petflag = false;
-//
-// do{
-//   var numberOfPetsGuess = prompt('How many household pets has David had in his lifetime?');
-//   counter++;
-//   if (numberOfPetsGuess<numberOfPetsActual){
-//     alert('Too low, guess higher.');
-//   } else if (numberOfPetsGuess>numberOfPetsActual){
-//     alert('Too high, guess lower.');
-//   } else if (isNaN(numberOfPetsGuess) || numberOfPetsGuess === null){
-//     alert('Enter a number please.');
-//   }
-//   guessesArray.push(numberOfPetsGuess);
-//   console.log(counter);
-// } while (parseInt(numberOfPetsGuess) !== numberOfPetsActual && counter < 5)
-//
-// if (parseInt(numberOfPetsGuess) === numberOfPetsActual){
-//   alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.');
-//   correctAnswers++;
-// } else {
-//   alert('Sorry you only get four guesses.');
-// }
-//
-// console.log('Number of Guesses: ', counter);
-// console.log('Guesses: ', guessesArray);
-//
-// var citiesBaseball = ['New York', 'Chicago', 'Detroit', 'St. Louis', 'San Fransisco', 'Milwaukee', 'Baltimore', 'Boston'];
-// var baseballArray = [];
-// var flag;
-// var counterTwo = 0;
-//
-// while(!flag){
-//   var cityGuess = prompt('Besides Seattle, name a city in which David has gone to a MLB game.').toUpperCase();
-//   counterTwo++
-//   baseballArray.push(cityGuess);
-//   for(var j=0;j<citiesBaseball.length;j++){
-//     console.log('Current guess: ', cityGuess);
-//     if (cityGuess === citiesBaseball[j].toUpperCase()){
-//       alert('You\'re right!');
-//       correctAnswers++;
-//       flag = true;
-//       break;
-//     } else if (counterTwo === 6){
-//       alert('Sorry, you only get 6 guesses.');
-//       flag = true;
-//       break;
-//     }
-//   }
-// }
-//
-// var citiesBaseballString = citiesBaseball.toString();
-// alert('You could have chosen from any of these cities: ' + citiesBaseballString);
-// console.log('Correct Answers: ', correctAnswers);
-// alert('In the end, you got ' + correctAnswers + ' out of 7 correct, ' + userName + '. But how were you supposed to know any of this anyways?');
+questionSeven();
