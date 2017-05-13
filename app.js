@@ -36,6 +36,56 @@ function askYNQuestion(qArr, corrArr, corrResp, incoResp){
 var hopeThisWorks = askYNQuestion(questionArray, correctAnswerArray, correctResponseArray, incorrectResponseArray);
 console.log(hopeThisWorks.join(', '));
 
+function askNumQuestion (askNum, corrNum, corrNumResponse, attemptsNum){
+  var ansNumReturn = [];
+  var attemptsRemaining = attemptsNum;
+  for (var a=0; a<attemptsNum; a++){
+    var userAnsNum = parseInt(prompt(askNum));
+    ansNumReturn.push(userAnsNum);
+    attemptsRemaining--;
+    if(userAnsNum > corrNum){
+      alert('That\'s too high. You have ' + attemptsRemaining + ' attempts left.');
+    } else if (userAnsNum < corrNum){
+      alert('That\'s too low. You have ' + attemptsRemaining + ' attempts left.');
+    } else if (userAnsNum === corrNum){
+      alert(corrNumResponse);
+      correctAnswers++;
+      return [ansNumReturn, correctAnswers];
+    } else {
+      alert('That\'s not a number. You have ' + attemptsRemaining + ' attempts left.');
+    }
+  }
+  console.log(userAnsNum, correctAnswers);
+  return [ansNumReturn, correctAnswers];
+}
+
+function askQuestions(ask, correct, correctResponse, incorrectResponse, amountOfAttempts){
+  var correctAnswers = 0;
+  var answerArray = [];
+  for (var i=0; i<ask.length; i++){
+    if (typeof correct[i] === 'number'){
+      answerArray.push(askNumQuestion(ask, correct, correctResponse, amountOfAttempts));
+    } else if (typeof correct[i] === 'object'){
+      if (typeof correct[i][0] === 'Y' || typeof correct[i][0] === 'YES' || typeof correct[i][0] === 'N' || typeof correct[i][0] === 'NO'){
+        answerArray.push(askYNQuestion(ask[i], correct[i], correctResponse[i], incorrectResponse[i]));
+      } else {
+        //ask multi-answer question
+      }
+    }
+  }
+  return [correctAnswers, answerArray];
+}
+
+var citiesBaseball = ['New York', 'Chicago', 'Detroit', 'St. Louis', 'San Fransisco', 'Milwaukee', 'Baltimore', 'Boston'];
+
+var questionArray = ['How many household pets has David had in his lifetime?', 'Besides Seattle, name a city in which David has gone to a MLB game.'];
+var correctAnswerArray = [6, ['New York', 'Chicago', 'Detroit', 'St. Louis', 'San Fransisco', 'Milwaukee', 'Baltimore', 'Boston']];
+var correctResponseArray = ['You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.', 'You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.', 'You\'re right! He\'s been to games in ' + citiesBaseball.join(', ') + '.'];
+var incorrectResponseArray = ['Sorry, that\'s not it.', 'Nope.'];
+var numberofAttempts = [6, 4];
+var userAnswerArray = [];
+
+/*
 var guessesArray = [];
 var numberOfPetsActual = 6;
 var counter = 1;
@@ -56,7 +106,7 @@ do{
 } while (parseInt(numberOfPetsGuess) !== numberOfPetsActual && counter < 5)
 
 if (parseInt(numberOfPetsGuess) === numberOfPetsActual){
-  alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.');
+  alert('You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.', 'You\'re right! He\'s been to games in ' + citiesBaseball.join(', '));
   correctAnswers++;
 } else {
   alert('Sorry you only get four guesses.');
@@ -93,3 +143,4 @@ var citiesBaseballString = citiesBaseball.toString();
 alert('You could have chosen from any of these cities: ' + citiesBaseballString);
 console.log('Correct Answers: ', correctAnswers);
 alert('In the end, you got ' + correctAnswers + ' out of 7 correct, ' + userName + '. But how were you supposed to know any of this anyways?');
+*/
