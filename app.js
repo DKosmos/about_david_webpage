@@ -65,6 +65,11 @@ function askMultiAnsQuestion (askMulti, corrMulti, corrRespMulti, incorrRespMult
   var ansMultiReturn = [];
   var correctAnswers = 0;
   var attemptsLeftMulti = attemptsMulti;
+  console.log(askMulti);
+  console.log(corrMulti);
+  console.log(corrRespMulti);
+  console.log(incorrRespMulti);
+  console.log(attemptsMulti);
   for (var i=0; i<attemptsMulti; i++){
     var userAnsMulti = prompt(askMulti).toUpperCase();
     ansMultiReturn.push(userAnsMulti);

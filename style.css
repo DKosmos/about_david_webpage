@@ -162,6 +162,10 @@ main div section div h3{
   font-size: 20px;
   padding: 0 0 5px 0;
 }
-main div section div img{
+.pictures div img{
   height: 200px;
+}
+.links div img{
+	max-height: 100px;
+	max-width: 200px;
 }
