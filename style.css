@@ -1,59 +1,167 @@
-body{
-  height: auto;
-}
-.ListTitle{
-  text-decoration: underline;
-}
-li{
-  list-style-type: none;
-}
-header {
-  width: auto;
-  height: 2em;
-  font-size: 6em;
-  text-align: center;
-  background-color: green;
-  padding-top: .5em;
-  margin: auto;
-  border: 2px solid black;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-.leftbar{
-  height: 1500px;
-  background-color: blue;
-  width: 20%;
-  margin-right: 0px;
-  float: left;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-.rightbar{
-  float: right;
-  height: 1500px;
-  background-color: black;
-  width: 20%;
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+  font-family: helvetica;
+}
+.floatclear{
+  clear: both;
+}
+a{
+  text-decoration: none;
+}
+header{
+  position: fixed;
+  top: 0;
+  height: 135px;
+  width: 100%;
+  background-color: #1a64ab;
+  outline: 2px black solid;
+}
+header div{
+  margin: 0 auto;
+  width: 960px;
+  height: 125px;
   text-align: center;
-  margin: 0;
+  background-color: #1a64ab;
+  border: 5px silver outset;
 }
-.Intro{
-  font-size: 1.15em;
-  padding-left: 10px;
-  padding-right: 10px;
+header img{
+  float: left;
+  width: 200px;
+  height: 125px;
+  margin-top: 10px 10px 10px 10px;
+}
+header h1{
+  padding-top: 15px;
+  font-size: 34px;
+  height: 45px;
+  background: #555;
+}
+header ul li{
+  float: left;
+  margin: 0 auto;
+  height: 30px;
+  width: 230px;
+  font-size: 24px;
+  font-color: black;
+  text-decoration: none;
+  padding: 10px 0px;
+  margin: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+header ul li:hover{
+  background: #599c5e;
+}
+body{
+  background-color: #b5b6ba;
 }
 main{
+  width: 960px;
+  margin: 135px auto 0px auto;
+}
+.leftbar{
   float: left;
-  background-color: green;
-  width: 60%;
-  height: 1500px;
+  height: 1000px;
+  font-size: 15px;
+  width: 116px;
+  background-color: #599c5e;
+  padding: 5px;
+  border: 2px solid black;
 }
-img{
-  height: 15em;
-  width: 20em;
+.center{
+  float: left;
+  width: 680px;
+  height: 994px;
+  background-color: silver;
+  padding: 10px;
 }
-button {
-  margin-left: 40px;
+.rightbar{
+  float: left;
+  width: 116px;
+  height: 1000px;
+  background-color: #599c5e;
+  padding: 5px;
+  border: 2px solid black;
 }
-.GuessingGameOutput{
-  font-size: 1.5em;
+footer{
+  position: fixed;
+  background-color: black;
+  bottom: 0;
+  height: 20px;
+  width: 100%;
+  float: left;
 }
-.Answer1{}
-.Answer2{}
-.Answer3{}
+.listtitle{
+  text-decoration: underline;
+  font-size: 18px;
+}
+.intro{
+  font-size: 20px;
+  text-align: justify;
+}
+main ul{
+  padding: 10px 0px;
+}
+main ol{
+  padding: 10px 0px;
+}
+main div section div{
+  float: left;
+  width: 340px;
+  text-align: center;
+  text-decoration: underline;
+}
+main div section div h3{
+  font-size: 20px;
+  padding: 0 0 5px 0;
+}
+main div section div img{
+  height: 200px;
+}
