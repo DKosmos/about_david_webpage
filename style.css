@@ -169,3 +169,6 @@ main div section div h3{
 	max-height: 100px;
 	max-width: 200px;
 }
+main div p{
+	padding: 15px;
+}
