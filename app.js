@@ -63,7 +63,7 @@ function askMultiAnsQuestion (askMulti, corrMulti, corrRespMulti, incorrRespMult
       }
     }
     if (attemptsLeftMulti === 0){
-      alert('Sorry, that was your last guess.')
+      alert('Sorry, that was your last guess.');
     } else if (attemptsLeftMulti !== 0){
       alert('Nope, try again');
     }
@@ -90,7 +90,7 @@ function askQuestions(ask, correct, correctResponse, incorrectResponse, amountOf
     } else if (typeof correct[tick][0] === 'object'){
       console.log('YN');
       console.log(correctFinalAnswers);
-      var answer = askYNQuestion(ask[tick], correct[tick], correctResponse[tick], incorrectResponse[tick]);
+      answer = askYNQuestion(ask[tick], correct[tick], correctResponse[tick], incorrectResponse[tick]);
       correctFinalAnswers += answer[1];
       numberOfQuestions += answer[0].length;
       console.log(numberOfQuestions);
@@ -100,7 +100,7 @@ function askQuestions(ask, correct, correctResponse, incorrectResponse, amountOf
     } else if (typeof correct[tick][0] === 'string'){
       console.log('Multi');
       console.log(correctFinalAnswers);
-      var answer = askMultiAnsQuestion(ask[tick], correct[tick], correctResponse[tick], incorrectResponse[tick], amountOfAttempts[tick]);
+      answer = askMultiAnsQuestion(ask[tick], correct[tick], correctResponse[tick], incorrectResponse[tick], amountOfAttempts[tick]);
       correctFinalAnswers += answer[1];
       numberOfQuestions += 1;
       console.log(numberOfQuestions);
@@ -109,18 +109,18 @@ function askQuestions(ask, correct, correctResponse, incorrectResponse, amountOf
       answerArray.push(answer[0]);
     }
   }
-  alert('You answered ' + correctFinalAnswers + ' out of ' + numberOfQuestions + ' correctly!')
+  alert('You answered ' + correctFinalAnswers + ' out of ' + numberOfQuestions + ' correctly!');
   return [correctFinalAnswers, numberOfQuestions, answerArray];
 }
 
 function writeAskQuestions(finalAnswerArray){
-  document.getElementById('Answer1').innerHTML = "Does David have pets? Your guess: " + finalAnswerArray[2][0][0] + " Correct answer: Yes";
-  document.getElementById('Answer2').innerHTML = "Does David have a cat? Your guess: " + finalAnswerArray[2][0][1] + " Correct answer: No";
-  document.getElementById('Answer3').innerHTML = "Does David walk to class? Your guess: " + finalAnswerArray[2][0][2] + " Correct answer: Yes";
-  document.getElementById('Answer4').innerHTML = "Does David walk his dog at lunch? Your guess: " + finalAnswerArray[2][0][3] + " Correct answer: Yes";
-  document.getElementById('Answer5').innerHTML = "Is David working while taking Code 201? Your guess: " + finalAnswerArray[2][0][4] + " Correct answer: No";
-  document.getElementById('Answer6').innerHTML = "How many household pets has David had? Your guesses: " + finalAnswerArray[2][1].join(', ') + " Correct answer: 6";
-  document.getElementById('Answer7').innerHTML = "Besides Seattle, in which cities has David been to a MLB game? Your guesses: " + finalAnswerArray[2][2].join(', ') + " Correct answers: " + citiesBaseball.join(', ');
+  document.getElementById('Answer1').innerHTML = 'Does David have pets? Your guess: ' + finalAnswerArray[2][0][0] + ' Correct answer: Yes';
+  document.getElementById('Answer2').innerHTML = 'Does David have a cat? Your guess: ' + finalAnswerArray[2][0][1] + ' Correct answer: No';
+  document.getElementById('Answer3').innerHTML = 'Does David walk to class? Your guess: ' + finalAnswerArray[2][0][2] + ' Correct answer: Yes';
+  document.getElementById('Answer4').innerHTML = 'Does David walk his dog at lunch? Your guess: ' + finalAnswerArray[2][0][3] + ' Correct answer: Yes';
+  document.getElementById('Answer5').innerHTML = 'Is David working while taking Code 201? Your guess: ' + finalAnswerArray[2][0][4] + ' Correct answer: No';
+  document.getElementById('Answer6').innerHTML = 'How many household pets has David had? Your guesses: ' + finalAnswerArray[2][1].join(', ') + ' Correct answer: 6';
+  document.getElementById('Answer7').innerHTML = 'Besides Seattle, in which cities has David been to a MLB game? Your guesses: ' + finalAnswerArray[2][2].join(', ') + ' Correct answers: ' + citiesBaseball.join(', ');
 }
 
 var citiesBaseball = ['New York', 'Chicago', 'Detroit', 'St. Louis', 'San Fransisco', 'Milwaukee', 'Baltimore', 'Boston'];
@@ -130,7 +130,6 @@ var correctAnswerArray = [[['Y','N','Y','Y','N'],['YES','NO','YES','YES','NO']],
 var correctResponseArray = [['You\'re right! He does have a pet.','You\'re right! David has a dog, not a cat.','Right you are, but he only lives two blocks away so it\'s not that impressive.','Well he usually does. Sometime his dog goes to daycare.','You\'re right, he took the month off from work to learn code!'], 'You\'re right! He\'s had two dogs and four cats over the years. But three of the cats belonged to his sister.', 'You\'re right! He\'s been to games in ' + citiesBaseball.join(', ') + '.'];
 var incorrectResponseArray = [['Actually, he does have a pet.','Wrong, David has a dog.','Actually he does walk to class, but he only lives two blocks away.','He actually walks his dog most days during the lunch hour. Occasionally his dog goes to daycare for the whole day.','There\'s no way David could work while taking classes from 9am to 6pm.'], 'Sorry, that\'s not it.', 'Nope.'];
 var numberofAttempts = [1, 6, 4];
-var userAnswerArray = [];
 
 var finalAnswerArray = askQuestions(questionArray, correctAnswerArray, correctResponseArray, incorrectResponseArray, numberofAttempts);
 console.log(finalAnswerArray);
