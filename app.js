@@ -64,11 +64,10 @@ function askMultiAnsQuestion (askMulti, corrMulti, corrRespMulti, incorrRespMult
     }
     if (attemptsLeftMulti === 0){
       alert('Sorry, that was your last guess.')
-    } else {
+    } else if (attemptsLeftMulti !== 0){
       alert('Nope, try again');
     }
   }
-  alert(incorrRespMulti);
   console.log(correctAnswers);
   return [ansMultiReturn, correctAnswers];
 }
